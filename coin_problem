@@ -30,3 +30,32 @@ OUTPUT:
 [5, 5, 5, 2]
 [5, 5, 5, 2, 1]
 [5, 5, 5, 2, 1]
+
+
+
+
+
+res=[]
+T=int(input())
+sum=0
+coins=list(map(int,input().split()))
+coins2=coins.copy()
+while sum<=T and len(coins)>0:
+    a=max(coins)
+    sum+=a
+    if sum<=T :
+        res.append(a)
+    else:
+        sum-=a
+        coins.remove(a)
+print(res)
+coins2.sort() 
+for i in coins2:
+    print(i,":",res.count(i))
+    
+    
+op:
+[5, 5, 5, 2, 1]
+1 : 1
+2 : 1
+5 : 3
