@@ -1,0 +1,32 @@
+problem:
+you have to make a change of an amount using the smallest possible number of coins.amount: $18 available coins are $5 COIN $2 COIN $1 COIN.THERE IS NO LIMIT
+TO THE NUMBER OF EACH COIN YOU CAN USE
+
+
+res=[]
+T=int(input())
+sum=0
+coins=list(map(int,input().split()))
+while sum<=T and len(coins)>0:
+    a=max(coins)
+    sum+=a
+    if sum<=T :
+        res.append(a)
+    else:
+        sum-=a
+        coins.remove(a)
+    print(res)
+    
+intput:
+18
+5 2 1
+
+OUTPUT:
+[5]
+[5, 5]
+[5, 5, 5]
+[5, 5, 5]
+[5, 5, 5, 2]
+[5, 5, 5, 2]
+[5, 5, 5, 2, 1]
+[5, 5, 5, 2, 1]
