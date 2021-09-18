@@ -19,3 +19,39 @@ input:
 5
 
 output:enter the numberfactorial 5=120
+
+
+
+another part
+
+# cook your dish here
+arr={}
+def DPfact(N):
+    
+    if N in arr:
+        print("already present")
+        return arr[N]
+    elif N==0 or N==1:
+        arr[N]=1 
+        return 1 
+    else:
+        factorial=N*DPfact(N-1)
+        arr[N]=factorial
+    return factorial
+    
+
+print(DPfact(5))
+print(DPfact(3))
+print(DPfact(2))
+
+
+
+input:
+5
+
+output:
+120
+already present
+6
+already present
+2
